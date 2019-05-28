@@ -1,0 +1,3 @@
+[submodule "dcsHazel/vendor/spdlog"]
+	path = dcsHazel/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
