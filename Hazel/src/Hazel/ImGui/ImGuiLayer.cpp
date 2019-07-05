@@ -96,7 +96,7 @@ namespace Hazel {
 	}
 
 
-	bool ImGuiLayer::OnMouseButtonReleasedEvent(MouseButtonReleasedEvent & e)
+	bool ImGuiLayer::OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		io.MouseDown[e.GetMouseButton()] = false;
@@ -104,7 +104,7 @@ namespace Hazel {
 		return false;
 	}
 
-	bool ImGuiLayer::OnMouseButtonPressedEvent(MouseButtonPressedEvent & e)
+	bool ImGuiLayer::OnMouseButtonPressedEvent(MouseButtonPressedEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		io.MouseDown[e.GetMouseButton()] = true;
@@ -112,7 +112,7 @@ namespace Hazel {
 		return false;
 	}
 
-	bool ImGuiLayer::OnMouseMovedEvent(MouseMovedEvent & e)
+	bool ImGuiLayer::OnMouseMovedEvent(MouseMovedEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		io.MousePos = ImVec2(e.GetX(), e.GetY());
@@ -120,7 +120,7 @@ namespace Hazel {
 		return false;
 	}
 
-	bool ImGuiLayer::OnMouseScrolledEvent(MouseScrolledEvent & e)
+	bool ImGuiLayer::OnMouseScrolledEvent(MouseScrolledEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		io.MouseWheelH += e.GetXOffset();
@@ -129,7 +129,7 @@ namespace Hazel {
 		return false;
 	}
 
-	bool ImGuiLayer::OnKeyPressedEvent(KeyPressedEvent & e)
+	bool ImGuiLayer::OnKeyPressedEvent(KeyPressedEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		io.KeysDown[e.GetKeyCode()] = true;
@@ -142,7 +142,7 @@ namespace Hazel {
 		return false;
 	}
 
-	bool ImGuiLayer::OnKeyReleasedEvent(KeyReleasedEvent & e)
+	bool ImGuiLayer::OnKeyReleasedEvent(KeyReleasedEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		io.KeysDown[e.GetKeyCode()] = false;
@@ -150,7 +150,7 @@ namespace Hazel {
 		return false;
 	}
 
-	bool ImGuiLayer::OnKeyTypedEvent(KeyTypedEvent & e)
+	bool ImGuiLayer::OnKeyTypedEvent(KeyTypedEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		int keycode = e.GetKeyCode();
@@ -160,8 +160,9 @@ namespace Hazel {
 		return false;
 	}
 
-	bool ImGuiLayer::OnWindowResizedEvent(WindowResizeEvent & e)
+	bool ImGuiLayer::OnWindowResizedEvent(WindowResizeEvent& e)
 	{
+		WindowResizeEvent ev = e;
 		ImGuiIO& io = ImGui::GetIO();
 		io.DisplaySize = ImVec2(e.GetWidth(), e.GetHeight());
 		io.DisplayFramebufferScale = ImVec2(1.0f, 1.0f);
